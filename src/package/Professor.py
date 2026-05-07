@@ -1,4 +1,5 @@
 from Tarefa import Tarefa
+from Tentativa import Tentativa
 
 class Professor:
     def __init__(self, nome: str, sobrenome: str, username: str) -> None:
@@ -6,9 +7,13 @@ class Professor:
         self.sobrenome = sobrenome
         self.username = username
 
-    def criaTarefa(self) -> Tarefa:
+    def criaTarefa() -> Tarefa:
         tarefa1 = Tarefa()
 
         return tarefa1
 
+    def corrige_tarefa(self, tarefa: Tarefa):
+        self.atribuir_nota(tarefa)
 
+    def atribuir_nota(nota: float, tentativa: Tentativa):
+        tentativa.set_nota(nota)
