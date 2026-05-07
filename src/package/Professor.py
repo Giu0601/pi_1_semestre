@@ -6,7 +6,7 @@ class Professor:
         self.sobrenome = sobrenome
         self.username = username
 
-    def criaTarefa() -> Tarefa:
+    def criaTarefa(self) -> Tarefa:
         tarefa1 = Tarefa()
 
         return tarefa1
