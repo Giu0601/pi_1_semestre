@@ -1,7 +1,7 @@
 from Questao import Questao
 
 class Tarefa:
-    def __init__(self, prazo: str, questao: Questao) -> None:
+    def __init__(self, prazo: str, questao: list[Questao]) -> None:
         self.prazo = prazo
         self.questao = questao
 

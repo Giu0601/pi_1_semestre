@@ -1,5 +1,6 @@
 from Tarefa import Tarefa
 from Tentativa import Tentativa
+from Questao import Questao
 
 class Professor:
     def __init__(self, nome: str, sobrenome: str, username: str) -> None:
@@ -7,13 +8,20 @@ class Professor:
         self.sobrenome = sobrenome
         self.username = username
 
-    def criaTarefa() -> Tarefa:
-        tarefa1 = Tarefa()
+    def criaTarefa(self) -> Tarefa:
+
+        # Proximas linhas somente para poder testar depois alinhar com o banco e front
+        prazo = input("Digite o prazo (dd-mm-yyyy)")
+        questoes = [Questao(), Questao(), Questao()]
+        
+        tarefa1 = Tarefa(prazo, questoes)
 
         return tarefa1
 
-    def corrige_tarefa(self, tarefa: Tarefa):
-        self.atribuir_nota(tarefa)
 
-    def atribuir_nota(nota: float, tentativa: Tentativa):
-        tentativa.set_nota(nota)
+    def atribuir_nota(self, nota: float, tentativa: Tentativa):
+        tentativa.nota = nota
+
+    def corrige_tarefa(self, tentativa: Tentativa):
+        nota = float(input("Digite a nota"))
+        self.atribuir_nota(nota, tentativa)
